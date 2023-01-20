@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./AddUser.module.css";
 
-const AddUser = () => {
-  const [formField, setFormField] = React.useState();
+const AddUser = (props) => {
+  const [formField, setFormField] = useState();
+
   const submitFormHandler = (e) => {
     e.preventDefault();
+    props.onCaptureData(formField);
+  };
+  const formChangeHandler = (e) => {
     const { name, value } = e.target;
     setFormField((prev) => ({ ...prev, [name]: value }));
   };
-  console.log(formField);
+
   return (
     <form className="form text-center" onSubmit={submitFormHandler}>
       <label htmlFor="name">Name</label>
@@ -17,7 +21,7 @@ const AddUser = () => {
         name="name"
         type="text"
         className="border-2 border-slate-900 rounded me-2"
-        onChange={(e) => submitFormHandler(e)}
+        onChange={(e) => formChangeHandler(e)}
       />
       <label htmlFor="age">Age</label>
       <input
@@ -25,7 +29,7 @@ const AddUser = () => {
         type="text"
         name="age"
         className="border-2 border-slate-900 rounded"
-        onChange={(e) => submitFormHandler(e)}
+        onChange={(e) => formChangeHandler(e)}
       />
       <br />
       <button className="border-2 border-slate-900 rounded m-2" type="submit">
