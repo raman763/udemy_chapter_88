@@ -3,7 +3,6 @@ import AddUser from "./AddUser";
 import classes from "./AddUser.module.css";
 
 const UserList = ({ list }) => {
-  console.log(list);
   return (
     <>
       {list.map((user, index) => (

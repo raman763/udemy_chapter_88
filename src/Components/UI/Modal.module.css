@@ -1,0 +1,18 @@
+.card_wrappper {
+  height: 11rem;
+  width: 26rem;
+  background: black;
+  margin: 4px;
+  border-radius: 4px;
+  color: white;
+  font-weight: 800;
+  left: 12rem;
+  top: 12rem;
+  position: fixed;
+  box-sizing: border-box;
+  color: #68c756;
+  box-shadow: -4px 9px 14px 15px;
+}
+
+/* .card_wrappper div {
+} */
